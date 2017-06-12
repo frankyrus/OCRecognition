@@ -2,7 +2,6 @@ package org.rsreu.aleksei_kirzhaev.ocr.contollers;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.UUID;
 
 import org.rsreu.aleksei_kirzhaev.ocr.utils.License;
 import org.springframework.stereotype.Controller;
@@ -32,8 +31,8 @@ public class AdminController {
 
 	@RequestMapping(value = "/updateToken", method = RequestMethod.POST)
 	public ModelAndView updateToken(@RequestParam(value = "token") String key) throws SQLException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("admin");
+		ModelAndView mv = new ModelAndView("admin");
+		mv.addObject("token", key);
 		if (License.setLicense(key)) {
 			mv.addObject("result", "<div style='text-align:center' class='alert alert-success'>Лицензия успешно обновлена</div>");
 		} else {

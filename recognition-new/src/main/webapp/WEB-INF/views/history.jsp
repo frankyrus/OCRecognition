@@ -26,7 +26,7 @@
 		<ul class="nav sidebar-nav">
 			<li class="sidebar-brand"><a href="/recognition-new/">Распознавание
 					изображений</a></li>
-			<li><a href="guide.html">Инструкция</a></li>
+			<li><a href="guide">Инструкция</a></li>
 			<li><a href="history">История</a></li>
 			<li><a href="admin.html">Администрирование</a></li>
 		</ul>

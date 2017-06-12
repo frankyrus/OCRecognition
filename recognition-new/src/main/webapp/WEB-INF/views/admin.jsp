@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
 					<ul class="nav sidebar-nav">
 						<li class="sidebar-brand"><a href="/recognition-new/">Распознавание
 						изображений</a></li>
-						<li><a href="guide.html">Инструкция</a></li>
+						<li><a href="guide">Инструкция</a></li>
 						<li><a href="history">История</a></li>
 						<li><a href="admin">Администрирование</a></li>
 					</ul>
@@ -45,17 +45,26 @@ pageEncoding="UTF-8"%>
 							}
 						</script>
 						<c:if test="${pageContext.request.userPrincipal.name != null}">
-						<form action="updateToken" class="input-group" method="post">
-							<input type="text" class="form-control"
-							placeholder="Новый ключ" name="token">
-							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit">
-								<i class="glyphicon glyphicon-ok"></i>
-								</button>
+						<form action="updateToken"  method="post">
+							<div class="row">
+								<img src="<c:url value="/resources/img/photo.jpg" />"
+									class="img-thumbnail img-responsive center-block"
+									style="width: 20%" alt="RSREU">
+							</div>
+							<br>
+							<div class="input-group">
+								<input type="text" class="form-control"
+								placeholder="Новый ключ" name="token">
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit">
+									<i class="glyphicon glyphicon-ok"></i>
+									</button>
+								</div>
 							</div>
 							<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" />
 						</form>
+						<br>
 						${result}
 						<h2>
 						<a href="javascript:formSubmit()">Выйти</a>

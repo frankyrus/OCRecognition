@@ -26,7 +26,10 @@ pageEncoding="UTF-8"%>
 										var fileExtension = "${types}".split(/\.|,./g);
 										if ($.inArray(filename.split('.').pop()
 												.toLowerCase(), fileExtension) == -1) {
-											alert("Only ${types} formats are allowed.");
+											alert("Разрешены только файлы: ${types}!");
+											$('.btn-success').prop('disabled', true);
+										} else {
+											$('.btn-success').prop('disabled', false);
 										}
 									});
 						})
@@ -43,7 +46,7 @@ pageEncoding="UTF-8"%>
 						<ul class="nav sidebar-nav">
 							<li class="sidebar-brand"><a href="/recognition-new/">Распознавание
 							изображений</a></li>
-							<li><a href="guide.html">Инструкция</a></li>
+							<li><a href="guide">Инструкция</a></li>
 							<li><a href="history">История</a></li>
 							<li><a href="admin">Администрирование</a></li>
 						</ul>
@@ -83,7 +86,7 @@ pageEncoding="UTF-8"%>
 							<div class="row" style="text-align: center">${error}</div>
 							<div class="row form-group">
 								<label for="result">Результат:</label>
-								<textarea class="form-control" rows="20" id="result">${result}</textarea>
+								<textarea class="form-control" rows="12" id="result">${result}</textarea>
 							</div>
 						</div>
 						<div class="col-sm-6" style="background-color: lavender;">
